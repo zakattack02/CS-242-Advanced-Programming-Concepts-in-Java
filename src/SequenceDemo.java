@@ -12,16 +12,18 @@ public class SequenceDemo
      */
     public static void main(String[] args)
     {
-        LastDigitDistribution dist1 = new LastDigitDistribution();
+        DigitDistribution dist1 = new DigitDistribution();
         dist1.process(new SquareSequence(), 1000);
-        // dist1.displayFirst("Square Sequence, first-digit distribution");
-        dist1.display("Square Sequence, last-digit distribution");
+        dist1.displayFirst();
+        System.out.println();
+        dist1.displayLast();
         System.out.println();
 
-        LastDigitDistribution dist2 = new LastDigitDistribution();
+        DigitDistribution dist2 = new DigitDistribution();
         dist2.process(new RandomSequence(), 1000);
-        // dist2.displayFirst("Random Sequence, first-digit distribution");
-        dist2.display("Random Sequence, last-digit distribution");
+        dist2.displayFirst();
+        System.out.println();
+        dist2.displayLast();
         System.out.println();
 
 //        try (Scanner in = new Scanner(new File("data/findata.txt"))) {

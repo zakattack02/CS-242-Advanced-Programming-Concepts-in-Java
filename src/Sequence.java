@@ -10,4 +10,10 @@ public interface Sequence
      * @return the next integer value in the sequence
      */
     int next();
+
+    /**
+     * Checks if there are more values available in the sequence.
+     * @return true if there is a next value, false otherwise
+     */
+    boolean hasNext();
 }

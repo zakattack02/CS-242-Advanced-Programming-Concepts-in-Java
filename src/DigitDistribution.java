@@ -23,7 +23,7 @@ public class DigitDistribution
      */
     public void process(Sequence seq, int valuesToProcess)
     {
-        for (int i = 1; i <= valuesToProcess; i++)
+        for (int i = 1; i <= valuesToProcess && seq.hasNext(); i++)
         {
             int value = seq.next();
             int lastDigit = value % 10;

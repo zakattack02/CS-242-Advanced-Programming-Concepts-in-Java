@@ -18,4 +18,13 @@ public class RandomSequence implements Sequence
     {
         return (int) (Integer.MAX_VALUE * Math.random());
     }
+
+    /**
+     * Checks if there is a next value available.
+     * @return true, since random sequences are infinite
+     */
+    public boolean hasNext()
+    {
+        return true;
+    }
 }

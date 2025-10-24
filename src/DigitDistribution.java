@@ -35,17 +35,43 @@ public class DigitDistribution
     }
 
     /**
-     * Helper method to display counters with a label.
+     * Helper method to display counters with a label, percentages, and histogram.
      * @param counters the array of counters to display
      * @param label the label to print above the table of digit counts
      */
     private void displayCounters(int[] counters, String label)
     {
         System.out.println("\n" + label);
+        
+        // Calculate total and find the largest count
+        int total = 0;
+        int maxCount = 0;
+        for (int count : counters) {
+            total += count;
+            if (count > maxCount) {
+                maxCount = count;
+            }
+        }
+        
+        // Determine the width needed for the count column
+        int countWidth = String.valueOf(maxCount).length();
+        
+        // Build the format string dynamically for right-aligned counts
+        String formatString = "%" + countWidth + "d";
+        
+        // Display each digit with count, percentage, and histogram
         for (int i = 0; i < counters.length; i++)
         {
-            System.out.println(i + ": " + counters[i]);
+            int count = counters[i];
+            double percentage = (total > 0) ? (count * 100.0 / total) : 0.0;
+            int histogramBars = (int) Math.round(percentage / 2.0);
+            String histogram = "*".repeat(histogramBars);
+            
+            System.out.printf("%d: " + formatString + ": %6.2f%%: %s%n", 
+                              i, count, percentage, histogram);
         }
+        
+        System.out.println("Total count: " + total);
     }
 
     /**
@@ -53,7 +79,7 @@ public class DigitDistribution
      */
     public void displayLast()
     {
-        displayCounters(lastDigitCounters, "last-digit distribution");
+        displayCounters(lastDigitCounters, "Last-digit distribution");
     }
 
     /**
@@ -61,6 +87,6 @@ public class DigitDistribution
      */
     public void displayFirst()
     {
-        displayCounters(firstDigitCounters, "first-digit distribution");
+        displayCounters(firstDigitCounters, "First-digit distribution");
     }
 }

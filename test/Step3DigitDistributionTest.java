@@ -3,7 +3,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class Step3_DigitDistributionTest {
+public class Step3DigitDistributionTest {
 
     Sequence squareSequence;
     DigitDistribution ddSquares;

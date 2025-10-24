@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.*;
 
-public class Step4_NextAndHasNext {
+public class Step4NextAndHasNextTest {
     // Maximum number of iterations when testing RandomSequence.
     private final int MAX_LOOPS = 100000;
 

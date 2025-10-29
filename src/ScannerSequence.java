@@ -6,7 +6,7 @@ import java.util.Scanner;
  */
 public class ScannerSequence implements Sequence
 {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     /**
      * Constructs a ScannerSequence with the given Scanner.

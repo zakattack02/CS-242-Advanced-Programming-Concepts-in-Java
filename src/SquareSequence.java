@@ -22,7 +22,7 @@ public class SquareSequence implements Sequence
     public int next()
     {
         if (!hasNext()) {
-            throw new java.util.NoSuchElementException("Integer overflow: next square would exceed Integer.MAX_VALUE");
+            throw new java.util.NoSuchElementException("next value would cause integer overflow");
         }
         n++;
         return n * n;

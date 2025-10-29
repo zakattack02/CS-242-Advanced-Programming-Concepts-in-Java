@@ -67,7 +67,7 @@ public class DigitDistribution
             int histogramBars = (int) Math.round(percentage / 2.0);
             String histogram = "*".repeat(histogramBars);
             
-            System.out.printf("%d: " + formatString + ": %6.2f%%: %s%n", 
+            System.out.printf("%d:  " + formatString + " : %6.2f%% :  %s%n",
                               i, count, percentage, histogram);
         }
         
@@ -83,10 +83,28 @@ public class DigitDistribution
     }
 
     /**
+     * Displays the last-digit distribution with a custom label.
+     * @param label the label to print above the table of digit counts
+     */
+    public void displayLast(String label)
+    {
+        displayCounters(lastDigitCounters, label);
+    }
+
+    /**
      * Displays the first-digit distribution.
      */
     public void displayFirst()
     {
         displayCounters(firstDigitCounters, "First-digit distribution");
+    }
+
+    /**
+     * Displays the first-digit distribution with a custom label.
+     * @param label the label to print above the table of digit counts
+     */
+    public void displayFirst(String label)
+    {
+        displayCounters(firstDigitCounters, label);
     }
 }
